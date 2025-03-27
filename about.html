@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" href="img/company.webp" type="image/png">
+    
+</head>
+ <!-- Page Preloder -->
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="hourglass"></div>
+</div>
+
+<!-- The rest of your page content goes here -->
+<div class="page-content">
+    <!-- Your page content -->
+</div>
+
+ <!-- Announcement Bar -->
+ <div class="textscroll">
+    <div class="toptext" id="scrollingText">
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+        <h1>Warning.</h1>
+    </div>
+</div>
+<body>
+<style>
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('img/peakpx.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* About Section */
+
+.about {
+      padding: 100px 0 20px 0;
+    text-align: center;
+}
+
+.about h1 {
+    color: white; /* Text color */
+    font-size: 2.5rem; /* Font size */
+    margin-bottom: 20px; /* Space below the heading */
+    padding: 20px; /* Padding around the text */
+    background:rgb(2, 50, 155); /* Gradient background */
+    border-radius: 10px; /* Rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect for depth */
+    display: inline-block; /* Makes the background fit the text */
+}
+
+
+.about p {
+    font-size: 1rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-img {
+    width: 20rem;
+    height: 20rem;
+
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.about-info p {
+    font-family: 'PixelFont', sans-serif; /* Custom font */
+    color: rgb(255, 255, 255); /* Text color */
+    font-size: 30px; /* Font size */
+    margin: 20px 2rem; /* Increased top/bottom margin for spacing */
+    text-align: justify; /* Justified text alignment */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow effect behind the text */
+}
+
+
+
+@media (max-width: 768px) {
+    .about-img {
+        display: none; /* Hide logo on smaller screens */
+    }
+    nav {
+        display: block;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: space-between;
+    }
+
+    .nav-links li {
+        margin-right: 0;
+    }
+
+    .about h1 {
+        font-size: rem;
+    }
+
+    .about p {
+        font-size: 1.3rem;
+    }
+
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .about-info p {
+        margin: 1rem 2rem;
+    }
+
+    .about-info button {
+        margin: 1rem 2rem;
+        width: 10rem;
+    }
+
+    .team {
+        margin: 0 1rem;
+    }
+}
+
+
+</style>
+    <div id="cart-popup-wrapper" class="cart-popup-wrapper" onclick="closeCartOnClickOutside(event)">
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close-btn" onclick="closeCart()">×</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">$0.00</span></p>
+            </div>
+            
+            <!-- Buy Now Button -->
+            <button id="checkout-button" class="checkout-btn">Checkout with Stripe</button>
+    
+            <!-- Terms and Conditions Link and Content -->
+            <div id="terms-conditions" class="terms-and-conditions">
+                <p>By proceeding, you agree to our <a href="policy.html" target="_blank">terms and conditions</a>.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+     <!-- Navigation Bar -->
+     
+     <div class="navbar">
+        <!-- Navigation Links on the Left -->
+        <ul class="nav-left" id="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clothing.html">Clothing</a></li>
+            <li><a href="collection.html">Collection</a></li>
+        </ul>
+    
+        <!-- Center Logo -->
+        <!-- Center Logo -->
+<div class="logo-center">
+<a href="index.html" id="logo-container">
+    <img src="img/company.webp" alt="Logo" id="logo-img">
+</a>
+</div>
+
+        <!-- Cart Button and About on the Right -->
+        <ul class="nav-right" id="nav-right">
+            <li>  <a id="cart-button" onclick="openCart()">Cart</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    
+        <!-- Hamburger Menu (on the top-right) -->
+        <div class="ham-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+    
+        <!-- Small Screen Cart Button -->
+        <div class="cart-button-small-screen">
+            <a id="cart-button-small" onclick="openCart()">Cart</a>
+        </div>
+    
+        <!-- Off-screen Menu -->
+        <div class="off-screen-menu">
+            <a href="index.html">Home</a>
+            <a href="clothing.html">Clothing</a>
+            <a href="collection.html">Collection</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+        <!-- Spacer to avoid layout shift when navbar becomes fixed -->
+<div class="navbar-spacer"></div>
+        <section class="about">
+            <h1>About Us</h1>
+            <div class="about-info">
+                <div class="about-img">
+                    <img src="img/company.webp" alt="Geeksforgeeks">
+                </div>
+                <div>
+                    <p>
+                        <strong>Cybertronic</strong> is a premium streetwear brand that fuses cutting-edge street style with timeless vintage fabrics and luxurious materials. We are redefining modern street fashion with a nod to the past, offering quality, style, and authenticity.
+                    </p>
+                    <p>
+                        We curate a diverse range of clothing that caters to all styles, from casual wear to chic ensembles, ensuring there's something for everyone. With a commitment to quality and sustainability, we prioritize ethical practices in our production processes, ensuring that each piece is made with care for both the planet and our customers.
+                    </p>
+                    <p>
+                        <strong>Our Vision and Mission</strong><br>
+                        <strong>Vision:</strong> To create a unique, high-quality streetwear experience, merging the raw energy of urban culture with the timeless charm of vintage fabrics.<br>
+                        <strong>Mission:</strong> At Cybertronic, we aim to design streetwear that speaks to individuals who appreciate authenticity, sustainability, and standout fashion. Our materials are thoughtfully sourced, ensuring each piece embodies both richness and comfort.
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+      
+  
+  <!-- Custom Alert Modal -->
+  <div id="customAlert" class="custom-alert hidden">
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()" class="alert-button">OK</button>
+</div>
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="containerf">
+          <div class="row">
+            <div class="footer-col">
+                <h4>Cybertronic</h4>
+                <h3 id="txt1">Subscribe to Our Newsletter</h3>
+                <form id="footerEmailForm" onsubmit="submitEmail(event)">
+                  <input type="email" id="footerEmail" name="footerEmail" placeholder="Enter your email" aria-label="Subscribe to our newsletter" required />
+                  <button type="submit" id="subs">Subscribe</button>
+                </form>
+              </div>
+              
+            <div class="footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="about.html">about</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="policy.html">terms & conditions</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <a href="https://www.instagram.com/cybertronicllc/" target="_blank">
+                  <img src="img/insta.webp" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@cybertronicc" target="_blank">
+                  <img src="img/tiktok.webp" alt="TikTok" />
+                </a>
+              </div>
+              
+              <!-- Payment icons row, now under the social links -->
+              <div class="payment-icons">
+                <img src="img/visa.webp" alt="Visa">
+                <img src="img/card.webp" alt="MasterCard">
+                <img src="img/apple-pay.webp" alt="Apple">
+                <img src="img/google-pay.webp" alt="Google-pay">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="scroll.js"></script>
+    <script src="cart.js"></script>
+    <script src="product.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+</body>
+</html>

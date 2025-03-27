@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="clothing.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing</title>
+    <link rel="icon" href="img/company.webp" type="image/png">
+    
+</head>
+ <!-- Page Preloder -->
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="hourglass"></div>
+</div>
+
+
+
+ <!-- Announcement Bar -->
+ <div class="textscroll">
+    <div class="toptext" id="scrollingText">
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+        <h4>Warning.</h4>
+    </div>
+</div>
+<body>
+
+    <div id="cart-popup-wrapper" class="cart-popup-wrapper" onclick="closeCartOnClickOutside(event)">
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close-btn" onclick="closeCart()">×</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">$0.00</span></p>
+            </div>
+            
+            <button id="checkout-button" class="checkout-btn">Checkout with Stripe</button>
+            <!-- Terms and Conditions Link and Content -->
+            <div id="terms-conditions" class="terms-and-conditions">
+                <p>By proceeding, you agree to our <a href="policy.html" target="_blank">terms and conditions</a>.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+     <!-- Landing Page Section --> <!-- Navigation Bar -->
+   
+     <div class="navbar">
+        <!-- Navigation Links on the Left -->
+        <ul class="nav-left" id="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clothing.html">Clothing</a></li>
+            <li><a href="collection.html">Collection</a></li>
+        </ul>
+    
+        <!-- Center Logo -->
+        <!-- Center Logo -->
+<div class="logo-center">
+<a href="index.html" id="logo-container">
+    <img src="img/company.webp" alt="Logo" id="logo-img">
+</a>
+</div>
+
+        <!-- Cart Button and About on the Right -->
+        <ul class="nav-right" id="nav-right">
+            <li>  <a id="cart-button" onclick="openCart()">Cart</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    
+        <!-- Hamburger Menu (on the top-right) -->
+        <div class="ham-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+    
+        <!-- Small Screen Cart Button -->
+        <div class="cart-button-small-screen">
+            <a  id="cart-button-small" onclick="openCart()">Cart</a>
+        </div>
+    
+        <!-- Off-screen Menu -->
+        <div class="off-screen-menu">
+            <a href="index.html">Home</a>
+            <a href="clothing.html">Clothing</a>
+            <a href="collection.html">Collection</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+        <div class="banner"> 
+            <div class="banner-text">
+                <h2>ELEVATE YOUR LOOK WITH OUR PREMIUM COLLECTIONS</h2>
+            </div>
+        </div>
+       
+     
+<div class="clothing-container">
+    <h1>Wardrobe</h1>
+<!-- Filter Button for Small Screens -->
+<button id="filter-toggle" class="filter-btn">Filter</button>
+
+<!-- Filtering Sidebar Section -->
+<div class="filter-sidebar">
+    <div id="filter-options" class="filter-bar">
+        <div class="filter-group">
+            <label for="gender-filter">Gender:</label>
+            <select id="gender-filter">
+                <option value="all">All</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="unisex">Unisex</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="size-filter">Size:</label>
+            <select id="size-filter">
+                <option value="all">All</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="price-filter">Price:</label>
+            <select id="price-filter">
+                <option value="all">All</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+                <option value="all">All</option>
+                <option value="t-shirts">T-Shirts</option>
+                <option value="hoodies">Hoodies</option>
+                <option value="pants">Pants</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+        <div class="filter-popup" id="filter-popup"></div>
+        <div class="clothing-grid">
+            <div class="item" data-product='{"name": "Yu Gi Oh! long sleeve", "price": 369.00, "description": "Yu Gi Oh! long sleeve sweat shirt with printed sleeves", "image": "img/emg/Fsleeves-Full(01).webp", "gender": "Unisex", "size":["S", "M", "L", "XL"], "category": "sweatshirt", "color": "Grey"}'>
+                <div class="fade-bg"></div>
+                <a href="yu-gi-oh-long-sleeve-shirt.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/Fsleeves-Full(01).webp" alt="Yu Gi Oh! long sleeve" class="front full-sleeve">
+                    <img src="img/emg/Fsleeves-B(01).webp" alt="Yu Gi Oh! long sleeve Back" class="back">
+                </a>
+                <p>Yu Gi Oh! long sleeve</p>
+                <span>AED 369</span>
+            </div>
+        
+            <div class="item" data-product='{"name": "Two side effect T-shirt", "price": 123.00, "description": "Two side effect T-shirt available in black and white", "image": "img/emg/T-shirtZ(01).webp", "gender": "Unisex", "size": ["S", "M", "L", "XL"], "category": "t-shirt", "color": "Black"}'>
+                <div class="fade-bg"></div>
+                <a href="two-side-effect-tshirt.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/T-shirtZ(01).webp" alt="Two side effect T-shirt" class="front">
+                    <img src="img/emg/T-shirtF(01).webp" alt="Two side effect T-shirt Back" class="back">
+                </a>
+                <p>Two side effect T-shirt</p>
+                <span>AED 123</span>
+            </div>
+        
+            <div class="item" data-product='{"name": "Bidun tamat Sweatpants", "price": 423.00, "description": "Bidun tamat Sweatpants in grey", "image": "img/emg/Trousers-Z(01).webp", "gender": "Unisex", "size":["S", "M", "L", "XL"], "category": "pants", "color": "Grey"}'>
+                <div class="fade-bg"></div>
+                <a href="bidun-tamat-sweatpants.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/Trousers-Z(01).webp" alt="Bidun tamat Sweatpants" class="front">
+                    <img src="img/emg/Trousers-M(01).webp" alt="Bidun tamat Sweatpants Back" class="back">
+                </a>
+                <p>Bidun tamat Sweatpants</p>
+                <span>AED 423</span>
+            </div>
+        
+            <div class="item" data-product='{"name": "Cybertronic shorts", "price": 179.00, "description": "Cybertronic shorts in blue and black", "image": "img/emg/ShortsF(01Black).webp", "gender": "Unisex", "size": ["S", "M", "L", "XL"], "category": "shorts", "color": "Black"}'>
+                <div class="fade-bg"></div>
+                <a href="cybertronic-shorts.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/ShortsF(01Black).webp" alt="Cybertronic shorts" class="front">
+                    <img src="img/emg/ShortsF(01Blue).webp" alt="Cybertronic shorts Back" class="back">
+                </a>
+                <p>Cybertronic shorts</p>
+                <span>AED 179</span>
+            </div>
+        
+            <div class="item" data-product='{"name": "Cybertronic Socks", "price": 69.00, "description": "Cybertronic socks available in blue, black, and orange", "image": "img/emg/Socks_1.webp", "gender": "Unisex", "size": ["S", "M", "L", "XL"], "category": "socks", "color": "Blue, Black, Orange"}'>
+                <div class="fade-bg"></div>
+                <a href="Cybertronic-Socks.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/Socks_1.webp" alt="Cybertronic Socks" class="front">
+                    <img src="img/emg/Socks_2.webp" alt="Cybertronic Socks Back" class="back">
+                </a>
+                <p class="product-name">Cybertronic Socks</p>
+                <span class="product-price">AED 69</span>
+            </div>
+        
+            <div class="item" data-product='{"name": "Dorohedoro T-shirt", "price": 223.00, "description": "Double-face tee featuring Dorohedoro graphics", "image": "img/emg/T-shirtF(03).webp", "gender": "Unisex", "size": ["S", "M", "L", "XL"], "category": "t-shirt", "color": "White, Black"}'>
+                <div class="fade-bg"></div>
+                <a href="dorohedoro-tshirt.html" class="image-container"> <!-- Link to Product Page -->
+                    <img src="img/emg/T-shirtF(03).webp" alt="Double-Face tee" class="front">  
+                    <img src="img/emg/T-shirtF(03W).webp" alt="Double-Face tee Back" class="back">
+                </a>
+                <p class="product-name">Dorohedoro T-shirt</p>
+                <span class="product-price">AED 223</span>
+            </div>
+            
+    </div>
+</div>
+    </div>
+          
+  <!-- Custom Alert Modal -->
+<div id="customAlert" class="custom-alert hidden">
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()" class="alert-button">OK</button>
+</div>
+
+<footer class="footer">
+    <div class="containerf">
+      <div class="row">
+        <div class="footer-col">
+            <h4>Cybertronic</h4>
+            <h3 id="txt1">Subscribe to Our Newsletter</h3>
+            <form id="footerEmailForm" onsubmit="submitEmail(event)">
+              <input type="email" id="footerEmail" name="footerEmail" placeholder="Enter your email" aria-label="Subscribe to our newsletter" required />
+              <button type="submit" id="subs">Subscribe</button>
+            </form>
+          </div>
+          
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clothing.html">Clothing</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="about.html">about</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="policy.html">terms & conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/cybertronicllc/" target="_blank">
+              <img src="img/insta.webp" alt="Instagram" />
+            </a>
+            <a href="https://www.tiktok.com/@cybertronicc" target="_blank">
+              <img src="img/tiktok.webp" alt="TikTok" />
+            </a>
+          </div>
+          
+          <!-- Payment icons row, now under the social links -->
+          <div class="payment-icons">
+            <img src="img/visa.webp" alt="Visa">
+            <img src="img/card.webp" alt="MasterCard">
+            <img src="img/apple-pay.webp" alt="Apple">
+            <img src="img/google-pay.webp" alt="Google-pay">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <script>
+    // JavaScript to toggle the visibility of the filter bar
+document.getElementById('filter-toggle').addEventListener('click', function() {
+    const filterOptions = document.getElementById('filter-options');
+    filterOptions.classList.toggle('show'); // Toggle the "show" class
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const genderFilter = document.getElementById('gender-filter');
+        const sizeFilter = document.getElementById('size-filter');
+        const priceFilter = document.getElementById('price-filter');
+        const categoryFilter = document.getElementById('category-filter');
+        const clothingGrid = document.querySelector('.clothing-grid');
+        const items = document.querySelectorAll('.item');
+        const filterPopup = document.getElementById('filter-popup');
+    
+        // Add change event listeners to each dropdown
+        genderFilter.addEventListener('change', applyFilters);
+        sizeFilter.addEventListener('change', applyFilters);
+        priceFilter.addEventListener('change', applyFilters);
+        categoryFilter.addEventListener('change', applyFilters);
+    
+        function applyFilters() {
+    const genderValue = genderFilter.value.toLowerCase();
+    const sizeValue = sizeFilter.value.toLowerCase();
+    const priceValue = priceFilter.value.toLowerCase();
+    const categoryValue = categoryFilter.value.toLowerCase();
+
+    // Clear previous filter popups
+    filterPopup.innerHTML = '';
+
+    // Create an array to hold selected filters
+    const selectedFilters = [];
+
+    if (genderValue !== 'all') selectedFilters.push(`Gender: ${genderValue}`);
+    if (sizeValue !== 'all') selectedFilters.push(`Size: ${sizeValue}`);
+    if (priceValue !== 'all') selectedFilters.push(`Price: ${priceValue}`);
+    if (categoryValue !== 'all') selectedFilters.push(`Category: ${categoryValue}`);
+
+    // Display selected filters
+    selectedFilters.forEach(filter => {
+        const filterItem = createFilterItem(filter);
+        filterPopup.appendChild(filterItem);
+    });
+
+    // Show the filter popup if there are active filters
+    if (selectedFilters.length > 0) {
+        filterPopup.classList.add('show'); // Add show class
+    } else {
+        filterPopup.classList.remove('show'); // Remove show class
+    }
+
+    // Filter items based on selected criteria
+    filterItems(genderValue, sizeValue, priceValue, categoryValue);
+}
+
+    
+        function filterItems(genderValue, sizeValue, priceValue, categoryValue) {
+            items.forEach(item => {
+                const productData = JSON.parse(item.dataset.product);
+                const matchesGender = genderValue === 'all' || productData.gender.toLowerCase() === genderValue;
+                const matchesSize = sizeValue === 'all' || productData.size.toLowerCase() === sizeValue;
+                const matchesPrice = priceValue === 'all' || (priceValue === 'low-to-high' ? productData.price >= 0 : productData.price < 50);
+                const matchesCategory = categoryValue === 'all' || productData.category.toLowerCase() === categoryValue;
+    
+                item.style.display = matchesGender && matchesSize && matchesPrice && matchesCategory ? 'block' : 'none';
+            });
+        }
+    
+        function createFilterItem(filter) {
+            const filterItem = document.createElement('div');
+            filterItem.classList.add('filter-item');
+            filterItem.textContent = filter;
+    
+            const removeFilterBtn = document.createElement('span');
+            removeFilterBtn.classList.add('remove-filter');
+            removeFilterBtn.textContent = '×';
+            removeFilterBtn.onclick = () => removeFilter(filter); // Attach event listener here
+    
+            filterItem.appendChild(removeFilterBtn);
+            return filterItem;
+        }
+    
+        window.removeFilter = function (filter) {
+    const filterItems = filterPopup.getElementsByClassName('filter-item');
+    const selectedFilters = Array.from(filterItems)
+        .map(item => item.textContent.trim())
+        .filter(f => !f.includes(filter)); // Filter out the removed filter
+
+    filterPopup.innerHTML = ''; // Clear popup
+    selectedFilters.forEach(f => {
+        const filterItem = createFilterItem(f);
+        filterPopup.appendChild(filterItem);
+    });
+
+    // If no filters left, hide the popup and reset products to default
+    if (selectedFilters.length === 0) {
+        filterPopup.classList.remove('show'); // Remove show class to hide the popup
+        resetProducts(); // Reset products to default
+        resetDropdowns(); // Reset dropdowns to default
+    } else {
+        // Show the popup again if there are remaining filters
+        filterPopup.classList.add('show');
+        // Reapply filters based on remaining selections
+        reapplyFilters(selectedFilters);
+    }
+};
+function createFilterItem(filter) {
+    const filterItem = document.createElement('div');
+    filterItem.classList.add('filter-item');
+    filterItem.textContent = filter;
+
+    const removeFilterBtn = document.createElement('span');
+    removeFilterBtn.classList.add('remove-filter');
+    removeFilterBtn.textContent = '×';
+    removeFilterBtn.onclick = () => removeFilter(filter); // Attach event listener
+
+    filterItem.appendChild(removeFilterBtn);
+    return filterItem;
+}
+
+    
+        function reapplyFilters(selectedFilters) {
+            const genderValue = selectedFilters.find(f => f.startsWith('Gender:'))?.split(': ')[1] || 'all';
+            const sizeValue = selectedFilters.find(f => f.startsWith('Size:'))?.split(': ')[1] || 'all';
+            const priceValue = selectedFilters.find(f => f.startsWith('Price:'))?.split(': ')[1] || 'all';
+            const categoryValue = selectedFilters.find(f => f.startsWith('Category:'))?.split(': ')[1] || 'all';
+    
+            filterItems(genderValue, sizeValue, priceValue, categoryValue);
+        }
+    
+        function resetProducts() {
+            items.forEach(item => {
+                item.style.display = 'block'; // Show all products
+            });
+        }
+    
+        function resetDropdowns() {
+            // Reset dropdown selectors to default value
+            genderFilter.selectedIndex = 0; // Assuming the first option is the default
+            sizeFilter.selectedIndex = 0; 
+            priceFilter.selectedIndex = 0; 
+            categoryFilter.selectedIndex = 0; 
+        }
+    
+        function openCart() {
+            document.getElementById('cart-popup-wrapper').style.display = 'flex';
+        }
+    
+        function closeCart() {
+            document.getElementById('cart-popup-wrapper').style.display = 'none';
+        }
+    
+        function closeCartOnClickOutside(event) {
+            if (event.target === document.getElementById('cart-popup-wrapper')) {
+                closeCart();
+            }
+        }
+    
+        function toggleTerms() {
+            const terms = document.getElementById('terms-conditions');
+            terms.style.display = terms.style.display === 'none' || terms.style.display === '' ? 'block' : 'none';
+        }
+    
+        // For page loading animation
+        window.addEventListener('load', function () {
+            document.getElementById('loadingScreen').style.display = 'none';
+        });
+    });
+    
+        </script>
+        
+    <script src="scroll.js"></script>
+    <script src="cart.js"></script>
+    <script src="product.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+</body>
+</html>

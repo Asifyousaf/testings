@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection</title>
+    <link rel="icon" href="img/company.webp" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylescollec.css"> <!-- Your CSS file link -->
+</head>
+<body>
+   <!-- Page Preloder -->
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="hourglass"></div>
+</div>
+
+
+ <!-- Announcement Bar -->
+ <div class="textscroll">
+    <div class="toptext" id="scrollingText">
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+        <h1>• Free shipping</h1>
+        <h1>• Best Quality</h1>
+        <H1>• Affordable Prices </H1>
+    </div>
+</div>
+
+<div id="cart-popup-wrapper" class="cart-popup-wrapper" onclick="closeCartOnClickOutside(event)">
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close-btn" onclick="closeCart()">×</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">$0.00</span></p>
+            </div>
+            
+            <!-- Buy Now Button -->
+            <button id="checkout-button" class="checkout-btn">Checkout with Stripe</button>
+    
+           <!-- Terms and Conditions Link and Content -->
+           <div id="terms-conditions" class="terms-and-conditions">
+            <p>By proceeding, you agree to our <a href="policy.html" target="_blank">terms and conditions</a>.</p>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    
+     <!-- Landing Page Section --> <!-- Navigation Bar -->
+     
+     <div class="section-landing">
+        <div class="navbar">
+            <!-- Navigation Links on the Left -->
+            <ul class="nav-left" id="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="collection.html">Collection</a></li>
+            </ul>
+        
+            <!-- Center Logo -->
+            <!-- Center Logo -->
+
+            <div class="logo-center">
+                <a href="index.html" id="logo-container">
+                    <img src="img/company.webp" alt="Logo" id="logo-img">
+                </a>
+            </div>
+
+            <!-- Cart Button and About on the Right -->
+            <ul class="nav-right" id="nav-right">
+                <li>  <a  id="cart-button" onclick="openCart()">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        
+            <!-- Hamburger Menu (on the top-right) -->
+            <div class="ham-menu" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
+        
+            <!-- Small Screen Cart Button -->
+            <div class="cart-button-small-screen">
+                <a class="cart-button" onclick="openCart()">Cart</a>
+            </div>
+        
+            <!-- Off-screen Menu -->
+            <div class="off-screen-menu">
+                <a href="index.html">Home</a>
+                <a href="clothing.html">Clothing</a>
+                <a href="collection.html">Collection</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        
+
+    
+       
+     </div>
+
+    <!-- Banner Section 1 -->
+    <section class="banner">
+        <img src="img/banner1.jpg" alt="Banner 1" class="banner-img">
+    </section>
+    <div class="clothing-container">
+        <h1>Volume One Collection</h1>
+<!-- Grid layout for larger screens -->
+<div class="clothing-grid" id="clothingGrid">
+    <!-- Product 1 -->
+    <div class="item">
+        <div class="fade-bg"></div>
+        <a href="yu-gi-oh-long-sleeve-shirt.html" class="image-container">
+            <img src="img/emg/Fsleeves-Full(01).webp" alt="Yu Gi Oh! long sleeve" class="front" style="height: 500px; transform: translateY(-10%);" loading="lazy">
+            <img src="img/emg/Fsleeves-F(01).webp" alt="Yu Gi Oh! long sleeve Back" class="back" loading="lazy">
+        </a>
+        <p class="product-name">Yu Gi Oh! long sleeve</p>
+        <span class="product-price">AED 369</span>
+    </div>
+    <!-- Product 2 -->
+    <div class="item">
+        <div class="fade-bg"></div>
+        <a href="two-side-effect-tshirt.html" class="image-container">
+            <img src="img/emg/T-shirtZ(01).webp" alt="Two side effect T-shirt" class="front" loading="lazy">
+            <img src="img/emg/T-shirtF(01).webp" alt="Two side effect T-shirt Back" class="back" loading="lazy">
+        </a>
+        <p class="product-name">Two side effect T-shirt</p>
+        <span class="product-price">AED 123</span>
+    </div>
+    <!-- Product 3 -->
+    <div class="item">
+        <div class="fade-bg"></div>
+        <a href="bidun-tamat-sweatpants.html" class="image-container">
+            <img src="img/emg/Trousers-Z(01).webp" alt="Bidun tamat Sweatpants" class="front" loading="lazy">
+            <img src="img/emg/Trousers-M(01).webp" alt="Bidun tamat Sweatpants Back" class="back" loading="lazy">
+        </a>
+        <p class="product-name">Bidun tamat Sweatpants</p>
+        <span class="product-price">AED 423</span>
+    </div>
+    <!-- Product 4 -->
+    <div class="item">
+        <div class="fade-bg"></div>
+        <a href="cybertronic-shorts.html" class="image-container">
+            <img src="img/emg/ShortsF(01Black).webp" alt="Cybertronic shorts" class="front" loading="lazy">
+            <img src="img/emg/ShortsF(01Blue).webp" alt="Cybertronic shorts Back" class="back" loading="lazy">
+        </a>
+        <p class="product-name">Cybertronic shorts</p>
+        <span class="product-price">AED 179</span>
+    </div>
+</div>
+
+<!-- Slider layout for smaller screens -->
+<div class="clothing-slider-wrapper" id="clothingSlider">
+    <button class="slider-arrow left-arrow" onclick="slideLeft()">&#10094;</button>
+    <div class="clothing-grid-slider" id="sliderGrid">
+        <!-- Slider Product 1 -->
+        <div class="item">
+            <div class="fade-bg"></div>
+            <a href="yu-gi-oh-long-sleeve-shirt.html" class="image-container">
+                <img src="img/emg/Fsleeves-Full(01).webp" alt="Yu Gi Oh! long sleeve" class="front" loading="lazy">
+                <img src="img/emg/Fsleeves-F(01).webp" alt="Yu Gi Oh! long sleeve Back" class="back" loading="lazy">
+            </a>
+            <p class="product-name">Yu Gi Oh! long sleeve</p>
+            <span class="product-price">AED 369</span>
+        </div>
+        <!-- Slider Product 2 -->
+        <div class="item">
+            <div class="fade-bg"></div>
+            <a href="bidun-tamat-sweatpants.html" class="image-container">
+                <img src="img/emg/Trousers-Z(01).webp" alt="Bidun tamat Sweatpants" class="front" loading="lazy">
+                <img src="img/emg/Trousers-M(01).webp" alt="Bidun tamat Sweatpants Back" class="back" loading="lazy">
+            </a>
+            <p class="product-name">Bidun tamat Sweatpants</p>
+            <span class="product-price">AED 423</span>
+        </div>
+        <!-- Slider Product 3 -->
+        <div class="item">
+            <div class="fade-bg"></div>
+            <a href="two-side-effect-tshirt.html" class="image-container">
+                <img src="img/emg/T-shirtZ(01).webp" alt="Two side effect T-shirt" class="front" loading="lazy">
+                <img src="img/emg/T-shirtF(01).webp" alt="Two side effect T-shirt Back" class="back" loading="lazy">
+            </a>
+            <p class="product-name">Two side effect T-shirt</p>
+            <span class="product-price">AED 123</span>
+        </div>
+        <!-- Slider Product 4 -->
+        <div class="item">
+            <div class="fade-bg"></div>
+            <a href="cybertronic-shorts.html" class="image-container">
+                <img src="img/emg/ShortsF(01Black).webp" alt="Cybertronic shorts" class="front" loading="lazy">
+                <img src="img/emg/ShortsF(01Blue).webp" alt="Cybertronic shorts Back" class="back" loading="lazy">
+            </a>
+            <p class="product-name">Cybertronic shorts</p>
+            <span class="product-price">AED 179</span>
+        </div>
+    </div>
+    <button class="slider-arrow right-arrow" onclick="slideRight()">&#10095;</button>
+</div>
+</div>
+
+    
+  
+  <!-- Custom Alert Modal -->
+  <div id="customAlert" class="custom-alert hidden">
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()" class="alert-button">OK</button>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="containerf">
+          <div class="row">
+            <div class="footer-col">
+                <h4>Cybertronic</h4>
+                <h3 id="txt1">Subscribe to Our Newsletter</h3>
+                <form id="footerEmailForm" onsubmit="submitEmail(event)">
+                  <input type="email" id="footerEmail" name="footerEmail" placeholder="Enter your email" aria-label="Subscribe to our newsletter" required />
+                  <button type="submit" id="subs">Subscribe</button>
+                </form>
+              </div>
+              
+            <div class="footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="about.html">about</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="policy.html">terms & conditions</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <a href="https://www.instagram.com/cybertronicllc/" target="_blank">
+                  <img src="img/insta.webp" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@cybertronicc" target="_blank">
+                  <img src="img/tiktok.webp" alt="TikTok" />
+                </a>
+              </div>
+              
+              <!-- Payment icons row, now under the social links -->
+              <div class="payment-icons">
+                <img src="img/visa.webp" alt="Visa">
+                <img src="img/card.webp" alt="MasterCard">
+                <img src="img/apple-pay.webp" alt="Apple">
+                <img src="img/google-pay.webp" alt="Google-pay">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script type="module" src="script.js"></script>
+      <script src="https://js.stripe.com/v3/"></script>
+    <script src="scroll.js"></script>
+    <script src="cart.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>
