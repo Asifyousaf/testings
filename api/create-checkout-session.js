@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const nodemailer = require('nodemailer');
-const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
 app.use(cors({
@@ -10,12 +9,6 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
-);
 
 // Configure nodemailer
 const transporter = nodemailer.createTransport({
@@ -41,7 +34,7 @@ async function sendReceiptEmail(session, items) {
         `${address.line1}\n${address.line2 || ''}\n${address.city}, ${address.state}\n${address.postal_code}\n${address.country}` 
         : 'No address provided';
 
-    const emailContent = `
+        const emailContent = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
             <h1 style="color: #333; text-align: center;">Thank You for Your Purchase!</h1>
             <p style="font-size: 16px; color: #555;">Order ID: <strong>${session.id}</strong></p>
@@ -69,7 +62,7 @@ async function sendReceiptEmail(session, items) {
             <p>We accept returns within <strong>7 days</strong> of delivery. Please see our <a href="https://cybertronicbot.com/policy" style="color: #3498db; text-decoration: none;">policy page</a> for details.</p>
             
             <h3 style="color: #222;">Need help?</h3>
-            <p>Contact us at <a href="mailto:support@cybertronicbot.com" style="color: #3498db; text-decoration: none;">support@cybertronicbot.com</a></p>
+            <p>Contact us at <a href="mailto:cybertronicbot@gmail.com" style="color: #3498db; text-decoration: none;">support@cybertronicbot.com</a></p>
             
             <p style="text-align: center; font-size: 16px; margin-top: 20px;">Thank you for shopping with <strong>Cybertronic</strong>!</p>
             
@@ -78,23 +71,23 @@ async function sendReceiptEmail(session, items) {
             </div>
         </div>
     `;
+    
 
-    // Send to customer
-    await transporter.sendMail({
+    const mailOptions = {
         from: process.env.EMAIL_USER,
         to: email,
         subject: 'Your Cybertronic Order Receipt',
         html: emailContent
-    });
+    };
 
-     // Send to Store Owner
-     await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: 'Cybertronicbot@gmail.com',
-        subject: 'New Order Received',
-        html: emailContent
-    });
+    try {
+        await transporter.sendMail(mailOptions);
+        console.log('Receipt email sent successfully');
+    } catch (error) {
+        console.error('Error sending receipt email:', error);
+    }
 }
+
 app.post('/api/create-checkout-session', async (req, res) => {
     try {
         const { cartItems } = req.body;
@@ -134,10 +127,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
                     color: item.color,
                     quantity: item.quantity
                 })))
-            },
-            automatic_tax: { enabled: true },
-            customer_email: req.body.email,
-            receipt_email: req.body.email
+            }
         });
         
         res.json({ id: session.id });
@@ -147,44 +137,50 @@ app.post('/api/create-checkout-session', async (req, res) => {
     }
 });
 
-// Webhook handler with added logging
+app.get('/api/create-checkout-session', async (req, res) => {
+    const sessionId = req.query.session_id;
+    console.log('Fetching session for ID:', sessionId);
+
+    try {
+        const session = await stripe.checkout.sessions.retrieve(sessionId, {
+            expand: ['line_items']
+        });
+        const lineItems = session.line_items;
+
+        // Send receipt email after successful checkout
+        await sendReceiptEmail(session, lineItems);
+
+        res.json({ session, lineItems });
+    } catch (error) {
+        console.error('Error fetching session details:', error);
+        res.status(500).json({ error: 'Failed to fetch session data' });
+    }
+});
+
 app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
     const signature = req.headers['stripe-signature'];
     const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
+try {
+    const event = stripe.webhooks.constructEvent(req.body, signature, endpointSecret);
+} catch (err) {
+    console.error('Webhook verification failed:', err);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+}
+
+
     try {
         const event = stripe.webhooks.constructEvent(req.body, signature, endpointSecret);
-        console.log('Webhook event received:', event); // Add logging here
-        
+        console.log(`Received event type: ${event.type}`);
+
         if (event.type === 'checkout.session.completed') {
             const session = event.data.object;
-            
-            // Save order to Supabase
-            const { data: order, error } = await supabase
-                .from('orders')
-                .insert({
-                    session_id: session.id,
-                    customer_email: session.customer_details.email,
-                    customer_name: session.customer_details.name,
-                    shipping_address: session.shipping_details,
-                    billing_address: session.customer_details.address,
-                    items: JSON.parse(session.metadata.cartItems),
-                    total_amount: session.amount_total / 100,
-                    status: 'paid'
-                });
-
-            if (error) {
-                console.error('Error saving order to Supabase:', error);
-            }
-
-            // Fetch the session details to get line items
-            const sessionDetails = await stripe.checkout.sessions.retrieve(session.id);
-            await sendReceiptEmail(sessionDetails, sessionDetails.line_items);
+            console.log('Payment succeeded:', session);
         }
 
         res.json({ received: true });
     } catch (err) {
-        console.error('Webhook error:', err);
+        console.error('Webhook signature verification failed:', err);
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 });
