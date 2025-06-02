@@ -3,24 +3,23 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { socialLinks } from "@/data/social";
 
 export function Hero() {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const displayedSkills = [
-    "Full Stack Developer",
-    "Web3 Enthusiast",
-    "Machine Learning Practitioner",
+    "Front End Developer",
+    "Web Developer",
+    "App Developer",
     "UI/UX Designer"
   ];
 
   // Parallax effect setup
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 150]); // Text moves slower
-  const y2 = useTransform(scrollY, [0, 500], [0, 250]); // Image moves faster
+  const y1 = useTransform(scrollY, [0, 500], [0, 150]);
+  const y2 = useTransform(scrollY, [0, 500], [0, 250]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,10 +36,10 @@ export function Hero() {
         return <Github className="h-5 w-5" />;
       case "linkedin":
         return <Linkedin className="h-5 w-5" />;
+      case "twitter":
+        return <Twitter className="h-5 w-5" />;
       case "mail":
         return <Mail className="h-5 w-5" />;
-      case "phone":
-        return <Phone className="h-5 w-5" />;
       default:
         return null;
     }
@@ -48,15 +47,6 @@ export function Hero() {
 
   return (
     <section className="relative py-12 md:py-24 overflow-hidden">
-      {/* Background elements with parallax effect */}
-      <motion.div 
-        className="absolute inset-0 -z-10"
-        style={{ y: useTransform(scrollY, [0, 1000], [0, 300]) }}
-      >
-        <div className="absolute right-0 top-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-70" />
-        <div className="absolute left-20 bottom-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-60" />
-      </motion.div>
-
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <motion.div 
@@ -70,7 +60,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Hi, I&apos;m Achyut Katiyar
+                  Hi, I&apos;m Asif Yousaf
                 </h1>
               </motion.div>
               <motion.div
@@ -102,9 +92,8 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="max-w-[600px] text-muted-foreground md:text-xl"
               >
-                A passionate developer with expertise in Next.js, React, Tailwind CSS,
-                and blockchain technologies. Currently pursuing a Master&apos;s in Computer Science
-                at Northeastern University.
+                A passionate developer with expertise in web development, mobile app development,
+                and UI/UX design. Currently focused on creating modern and responsive web applications.
               </motion.p>
             </div>
             
@@ -123,8 +112,8 @@ export function Hero() {
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <a 
-                  href="/resume.pdf" 
-                  download="Achyut_Katiyar_Resume.pdf" 
+                  href="https://github.com/Asifyousaf/MyPortfolio.github.io/raw/main/Asif%20CV.pdf" 
+                  download="Asif_CV.pdf" 
                   target="_blank"                      
                   rel="noopener noreferrer"
                 >
@@ -134,7 +123,7 @@ export function Hero() {
               </Button>
             </motion.div>
             
-            {/* Social Links - Added here from navbar */}
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -165,25 +154,6 @@ export function Hero() {
                 </motion.div>
               ))}
             </motion.div>
-          </motion.div>
-          
-          <motion.div
-            className="flex items-center justify-center"
-            style={{ y: y2 }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-full">
-              <Image
-                src="/images/profile.jpg"
-                alt="Achyut Katiyar"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
-            </div>
           </motion.div>
         </div>
       </div>
