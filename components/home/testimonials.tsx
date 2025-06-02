@@ -17,20 +17,12 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    id: "anil",
-    name: "Anil Nigam",
-    position: "Strategic professional with strong business acumen",
-    relation: "Mentor",
-    date: "July 1, 2024",
-    quote: "Achyut has consistently demonstrated a strong work ethic, technical proficiency, and exceptional leadership skills throughout his tenure. As a student council member, Achyut played a pivotal role in organizing and executing various student events."
-  },
-  {
-    id: "revathi",
-    name: "Revathi B",
-    position: "Associate Director Student Affairs SRM AP",
-    relation: "Manager",
-    date: "May 23, 2024",
-    quote: "I am pleased to recommend Achyut for his exceptional technical and leadership skills. As a Technical Executive, he oversaw technical operations using advanced methodologies to achieve project milestones and foster innovation."
+    id: "sumair",
+    name: "Sumair",
+    position: "Client",
+    relation: "Client",
+    date: "December 23, 2024",
+    quote: "Asif built a perfect website for me, from design to making it live. His attention to detail and technical expertise made the entire process smooth and the end result exceeded my expectations."
   }
 ];
 
@@ -45,14 +37,14 @@ export function Testimonials() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Recommendations
+            Client Testimonials
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
-            What mentors and colleagues say about my work
+            What clients say about my work
           </p>
         </motion.div>
         
-        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+        <div className="grid gap-8 md:grid-cols-1 max-w-3xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}

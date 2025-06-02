@@ -1,4 +1,3 @@
-// components/layout/footer.tsx
 "use client";
 
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/data/social";
 
 export function Footer() {
-  // Get icon component for social links
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case "github":
@@ -34,16 +32,14 @@ export function Footer() {
         className="container px-4 md:px-6 mx-auto"
       >
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Achyut Katiyar</h3>
+            <h3 className="text-lg font-bold">Asif Yousaf</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Full Stack Developer & Machine Learning Enthusiast based in Boston,
-              specialized in creating modern web applications and blockchain solutions.
+              Full Stack Developer & Machine Learning Enthusiast based in Dubai,
+              specialized in creating modern web applications and innovative solutions.
             </p>
           </div>
           
-          {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Quick Links</h3>
             <ul className="space-y-2">
@@ -84,7 +80,6 @@ export function Footer() {
             </ul>
           </div>
           
-          {/* Connect */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Connect</h3>
             <div className="flex flex-wrap gap-2">
@@ -109,7 +104,6 @@ export function Footer() {
             </div>
           </div>
           
-          {/* Keyboard Shortcuts */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Keyboard Shortcuts</h3>
             <div className="space-y-2">
@@ -140,7 +134,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center text-sm text-muted-foreground">
               <Copyright className="mr-1 h-3.5 w-3.5" />
-              <span>{new Date().getFullYear()} Achyut Katiyar. All rights reserved.</span>
+              <span>{new Date().getFullYear()} Asif Yousaf. All rights reserved.</span>
             </div>
             <div className="text-sm text-muted-foreground flex items-center gap-1.5">
               <span>Built with</span>

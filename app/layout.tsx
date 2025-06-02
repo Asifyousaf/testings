@@ -3,28 +3,28 @@ import { ClientLayout } from "./client-layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Achyut Katiyar | Full Stack Developer",
-  description: "Full Stack Developer & Machine Learning Enthusiast with expertise in Next.js, React, and blockchain technologies.",
-  metadataBase: new URL("https://achyutkatiyar.com"),
+  title: "Asif Yousaf | Full Stack Developer",
+  description: "Full Stack Developer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
+  metadataBase: new URL("https://asifyousaf.com"),
   
   // Basic metadata
-  applicationName: "Achyut Katiyar Portfolio",
-  authors: [{ name: "Achyut Katiyar" }],
-  keywords: ["Full Stack Developer", "Web3", "Blockchain", "Next.js", "React", "Machine Learning"],
+  applicationName: "Asif Yousaf Portfolio",
+  authors: [{ name: "Asif Yousaf" }],
+  keywords: ["Full Stack Developer", "Web Development", "Frontend", "Backend", "Machine Learning"],
   
   openGraph: {
     type: "website",
-    url: "https://achyutkatiyar.com",
-    title: "Achyut Katiyar | Full Stack Developer",
-    description: "Full Stack Developer & Blockchain and Machine Learning Enthusiast with expertise in Next.js, React, and blockchain technologies.",
-    siteName: "Achyut Katiyar",
+    url: "https://asifyousaf.com",
+    title: "Asif Yousaf | Full Stack Developer",
+    description: "Full Stack Developer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
+    siteName: "Asif Yousaf",
     locale: "en_US",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Achyut Katiyar - Portfolio",
+        alt: "Asif Yousaf - Portfolio",
       },
     ],
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: "https://achyutkatiyar.com",
+    canonical: "https://asifyousaf.com",
   },
 };
 

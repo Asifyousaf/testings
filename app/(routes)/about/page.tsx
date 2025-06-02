@@ -1,4 +1,3 @@
-// app/(routes)/about/page.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -34,13 +33,13 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I&apos;m Achyut Katiyar, a Full Stack Developer with a passion for creating innovative web applications and exploring blockchain technologies. I&apos;m currently pursuing a Master&apos;s in Computer Science at Northeastern University, where I continue to expand my knowledge and skills.
+                I&apos;m Asif Yousaf, a passionate developer with a strong foundation in frontend and backend technologies, currently pursuing a BSc (Hons) in Creative Computing at Bath Spa University.
               </p>
               <p>
-                With expertise in Next.js, React, and various blockchain technologies, I enjoy building scalable and user-friendly applications that solve real-world problems. My background in computer science has given me a strong foundation in algorithms, data structures, and system design, which I apply to create efficient and maintainable code.
+                With over two years of experience in Python and more than a year in HTML and CSS, I&apos;ve built dynamic, user-friendly applications and websites — including Cybertronicbot, a complete e-commerce fashion platform. I&apos;m enthusiastic about crafting clean, responsive designs with a focus on great UI/UX.
               </p>
               <p>
-                I&apos;m particularly interested in the intersection of web development and blockchain technology, where I&apos;ve developed several projects that leverage the power of decentralized systems to create secure and transparent applications.
+                Recently, I&apos;ve started expanding my skills into JavaScript and Android app development using Kotlin, aiming to build robust cross-platform experiences. I&apos;m also deeply interested in Machine Learning and continually learning how to integrate intelligent systems into web and mobile solutions.
               </p>
             </div>
 
@@ -96,50 +95,6 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">Achievements</h2>
-            <Card>
-              <CardContent className="p-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Led University&apos;s Technical Team as Convener, increasing student engagement by 40% through committee formation and industry-aligned website redesigns.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Served as a Board Member of the APP Design and Development Club, mentoring newcomers and improving skills by 60%.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Won $1500 Nillion Track Prize at Hacker House Goa 2024.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Awarded $600 at Move it with Aptos event.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Received $500 Marbelism Track Prize at HACKSRM 2.0 2024.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Won $100 at APPATHON 2022.
-                    </span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </div>
