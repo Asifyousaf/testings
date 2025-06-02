@@ -8,6 +8,7 @@ export interface Project {
   image: string;
   github?: string;
   liveUrl?: string;
+  figmaUrl?: string;
   featured: boolean;
 }
 
@@ -82,8 +83,9 @@ export const projects: Project[] = [
       "Optimized user experience across devices"
     ],
     image: "/images/projects/masatalnahar/masatalnahar.jpg",
-    github: "https://github.com/Asifyousaf",
-    liveUrl: "https://www.figma.com/design/EbVP0zAOfFQh47ipLr8vGj/Untitled?node-id=0-1&t=mW5R9So3ZYa2oFnX-1",
+    github: "https://github.com/Asifyousaf/masatalnahar.io",
+    liveUrl: "https://asifyousaf.github.io/masatalnahar.io/",
+    figmaUrl: "https://www.figma.com/design/EbVP0zAOfFQh47ipLr8vGj/Untitled?node-id=0-1&t=9fGXUPLwx2EvAr2C-1",
     featured: true
   },
   {
@@ -136,5 +138,73 @@ export const projects: Project[] = [
     github: "https://github.com/Asifyousaf",
     liveUrl: "https://www.figma.com/design/1d641mijroI1sBszp7QlSr/High-fi---Fix-My-Ride?node-id=0-1&t=aZph7JpeEYl7Gsch-1",
     featured: true
+  },
+  {
+    id: "alan-partridge-soundboard",
+    title: "Alan Partridge Soundboard",
+    description: "A fun and interactive soundboard & text-to-speech app featuring Alan Partridge's iconic catchphrases.",
+    longDescription: "This web-based soundboard lets users play popular Alan Partridge quotes with a single click and features a built-in Text-to-Speech (TTS) tool for custom phrases. Designed for entertainment, it's fully responsive and delivers a vibrant user experience with smooth audio playback and clean UI.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Web Speech API"],
+    achievements: [
+      "Designed and coded a dynamic soundboard with multiple phrases",
+      "Implemented a functional Text-to-Speech box using Web Speech API",
+      "Developed a paginated layout to handle more sound buttons",
+      "Created a vibrant, responsive design using HTML/CSS",
+      "Used vanilla JavaScript for full functionality (no external libraries)"
+    ],
+    image: "/images/projects/soundboard/soundboard.jpg",
+    github: "https://github.com/Asifyousaf",
+    liveUrl: "https://asifyousaf.github.io/soundboard/",
+    featured: false
+  },
+  {
+    id: "the-lost-key",
+    title: "The Lost Key",
+    description: "A captivating puzzle-platformer game built with Unity, challenging players with intricate puzzles and magical landscapes.",
+    longDescription: "Embark on an enchanting adventure in 'The Lost Key,' a captivating puzzle-platformer that will challenge your wit and dexterity. Dive into a mysterious world filled with intricate puzzles, magical landscapes, and hidden secrets waiting to be uncovered.",
+    technologies: ["Unity", "C#", "Game Design", "2D Graphics"],
+    achievements: [
+      "Developed challenging puzzles with escalating complexity",
+      "Created beautifully crafted environments with unique charm",
+      "Implemented fluid and responsive controls",
+      "Designed engaging platformer gameplay mechanics",
+      "Integrated immersive soundtrack and sound effects"
+    ],
+    image: "/images/projects/lost-key/lost-key.jpg",
+    liveUrl: "https://asif469.itch.io/the-lost-key",
+    featured: false
+  },
+  {
+    id: "labyrinth",
+    title: "Labyrinth",
+    description: "An engaging puzzle game that challenges players to navigate through intricate mazes.",
+    longDescription: "A challenging puzzle game where players must navigate through complex labyrinths, testing their problem-solving skills and spatial awareness.",
+    technologies: ["Unity", "C#", "Game Design", "Level Design"],
+    achievements: [
+      "Designed multiple challenging maze levels",
+      "Implemented smooth player controls",
+      "Created engaging puzzle mechanics",
+      "Optimized game performance"
+    ],
+    image: "/images/projects/labyrinth/labyrinth.jpg",
+    liveUrl: "https://asif469.itch.io/labyrinth",
+    featured: false
+  },
+  {
+    id: "meal-maker-api",
+    title: "Meal Maker API",
+    description: "A Python application with Tkinter GUI that leverages The Meal DB API for recipe discovery.",
+    longDescription: "The 'Meal Maker API' is a Python application with a user-friendly Tkinter GUI that leverages The Meal DB API. This project enables users to explore and discover various meals effortlessly. Key features include a search bar allowing users to find detailed information about specific meals, a randomize button for a diverse and unpredictable meal selection, and seamless interaction with embedded YouTube links for additional culinary content.",
+    technologies: ["Python", "Tkinter", "REST API", "GUI Design"],
+    achievements: [
+      "Developed a clean and intuitive graphical interface",
+      "Integrated The Meal DB API for recipe data",
+      "Implemented search and randomize functionality",
+      "Created seamless YouTube video integration",
+      "Optimized API response handling"
+    ],
+    image: "/images/projects/meal-maker/meal-maker.jpg",
+    github: "https://github.com/Asifyousaf/meal-maker",
+    featured: false
   }
 ];
