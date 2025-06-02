@@ -23,7 +23,7 @@ export const education: Education[] = [
     degree: "High School",
     institution: "His Highness Shaikh Rashid Al Maktoum Pakistan School",
     location: "Dubai, UAE",
-    startDate: "September 2019",
+    startDate: "September 2011",
     endDate: "June 2023"
   }
 ];

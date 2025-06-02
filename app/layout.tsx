@@ -4,19 +4,19 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Asif Yousaf | Full Stack Developer",
-  description: "Full Stack Developer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
+  description: "Full Stack Developer, UI/UX Designer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
   metadataBase: new URL("https://asifyousaf.com"),
   
   // Basic metadata
   applicationName: "Asif Yousaf Portfolio",
   authors: [{ name: "Asif Yousaf" }],
-  keywords: ["Full Stack Developer", "Web Development", "Frontend", "Backend", "Machine Learning"],
+  keywords: ["Full Stack Developer", "UI/UX Designer", "Machine Learning", "Web Development", "Frontend", "Backend"],
   
   openGraph: {
     type: "website",
     url: "https://asifyousaf.com",
     title: "Asif Yousaf | Full Stack Developer",
-    description: "Full Stack Developer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
+    description: "Full Stack Developer, UI/UX Designer & Machine Learning Enthusiast with expertise in web development and innovative solutions.",
     siteName: "Asif Yousaf",
     locale: "en_US",
     images: [

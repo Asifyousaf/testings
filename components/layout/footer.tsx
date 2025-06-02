@@ -35,8 +35,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Asif Yousaf</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Full Stack Developer & Machine Learning Enthusiast based in Dubai,
-              specialized in creating modern web applications and innovative solutions.
+              Full Stack Developer & Machine Learning Enthusiast based in Dubai.
             </p>
           </div>
           

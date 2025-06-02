@@ -14,12 +14,14 @@ interface StarsProps {
 function Stars(props: StarsProps) {
   const ref = useRef<THREE.Points>(null);
   const [sphere] = useState(() => {
-    // Create array with explicit size
-    const arr = new Float32Array(5000);
+    // Create array with explicit size for x,y,z coordinates (5000 stars * 3 coordinates per star)
+    const arr = new Float32Array(5000 * 3);
     
-    // Generate safe random values
-    for (let i = 0; i < arr.length; i++) {
-      arr[i] = (Math.random() - 0.5) * 2.4;
+    // Generate safe random values for each coordinate (x,y,z) of each star
+    for (let i = 0; i < 5000; i++) {
+      arr[i * 3] = (Math.random() - 0.5) * 2.4;     // x coordinate
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 2.4; // y coordinate
+      arr[i * 3 + 2] = (Math.random() - 0.5) * 2.4; // z coordinate
     }
     
     return arr;

@@ -152,7 +152,7 @@ export function Navbar() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      Achyut Katiyar
+                      Asif Yousaf
                     </motion.span>
                   </Link>
                 </div>
@@ -220,7 +220,7 @@ export function Navbar() {
                           href="/"
                           className="font-display text-2xl font-bold transition-colors hover:text-primary"
                         >
-                          Achyut Katiyar
+                          Asif Yousaf
                         </Link>
                         <ThemeSwitch />
                       </div>
